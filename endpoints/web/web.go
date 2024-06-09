@@ -9,10 +9,10 @@ import (
 	"strings"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/avalonbits/{{project}}/embeded"
-	"github.com/avalonbits/{{project}}/endpoints"
-	"github.com/avalonbits/{{project}}/service/recaptcha"
-	"github.com/avalonbits/{{project}}/service/user"
+	"github.com/avalonbits/echo-template-service/embeded"
+	"github.com/avalonbits/echo-template-service/endpoints"
+	"github.com/avalonbits/echo-template-service/service/recaptcha"
+	"github.com/avalonbits/echo-template-service/service/user"
 	"github.com/labstack/echo/v4"
 	"github.com/microcosm-cc/bluemonday"
 )

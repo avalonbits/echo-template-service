@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"github.com/avalonbits/{{project}}/cmd/setup"
-	"github.com/avalonbits/{{project}}/config"
+	"github.com/avalonbits/echo-template-service/cmd/setup"
+	"github.com/avalonbits/echo-template-service/config"
 )
 
 func main() {

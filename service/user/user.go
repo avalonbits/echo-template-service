@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/avalonbits/{{project}}/storage"
-	"github.com/avalonbits/{{project}}/storage/datastore"
+	"github.com/avalonbits/echo-template-service/storage"
+	"github.com/avalonbits/echo-template-service/storage/datastore"
 	"github.com/oklog/ulid"
 	"golang.org/x/crypto/argon2"
 )

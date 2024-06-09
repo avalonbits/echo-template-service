@@ -3,7 +3,7 @@ package datastore
 import (
 	"embed"
 
-	"github.com/avalonbits/{{project}}/storage"
+	"github.com/avalonbits/echo-template-service/storage"
 )
 
 //go:embed migrations/*
