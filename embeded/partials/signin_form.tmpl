@@ -1,0 +1,25 @@
+{{define "content"}}
+    {{if .ErrMsg}}
+       <hgroup style="margin-bottom:0">
+    {{end}}
+            <h1><center>Sign in to your account</center></h1>
+    {{if .ErrMsg}}
+	        <h4 class="pico-color-amber-200">
+                <center><b>error:</b> {{safeHTML .ErrMsg}}</center>
+		    </h4>
+        </hgroup>
+    {{end}}
+
+    <form method="post" action="/form/signin">
+        <input type="hidden" name="csrf_token" value="{{.CSRFToken}}" />
+        <label for="username">User name</label>
+        <input type="text" id="username" name="username" placeholder="username"
+               pattern="^[a-z_][a-z0-9_]*$" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <p><center>Don't have an account? <a href="/form/signup">Create one.</a></center></p>
+{{end}}

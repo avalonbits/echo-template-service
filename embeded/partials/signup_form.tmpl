@@ -1,0 +1,34 @@
+{{define "content"}}
+    {{if .Recaptcha}}
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {{end}}
+    {{if .ErrMsg}}
+       <hgroup style="margin-bottom:0">
+    {{end}}
+            <h1><center>Create your account</center></h1>
+    {{if .ErrMsg}}
+            <h4 class="pico-color-amber-200" >
+                <center><b>error:</b> {{safeHTML .ErrMsg}}</center>
+		    </h4>
+        </hgroup>
+    {{end}}
+    <form method="post" action="/form/signup">
+        <input type="hidden" name="csrf_token" value="{{.CSRFToken}}" />
+        <label for="username">User name</label>
+        <input type="text" id="username" name="username" placeholder="lowercase, numbers and underscore"
+               pattern="^[a-z_][a-z0-9_]*$" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+
+        <label for="confirm">Confirm</label>
+        <input type="password" id="confirm" name="confirm" placeholder="confirm" required>
+        <button type="submit">Submit</button>
+        {{if .Recaptcha}}
+            <center>
+                <div class="g-recaptcha" data-sitekey="{-recaptch-client-token-}"></div>
+            </center>
+        {{end}}
+    </form>
+</form>
+{{end}}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="description" content="Create short links for your long urls. Create an account and have them be ad-free!">
+    <link rel="stylesheet" href="/static/roboto-700.min.css" async defer >
+    <link rel="stylesheet" href="/static/pico.min.css" async defer>
+    <link rel="stylesheet" href="/static/pico.colors.min.css" async defer>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>{{project}}</title>
+</head>
+
+<body>
+	<header class="container" style="padding:1rem;padding-bottom:0;">
+		<nav>
+            <ul>
+                <a href="/">{{project}}</a>
+            </ul>
+  			<ul>
+                {{block "menu" .}}{{end}}
+	  		</ul>
+		</nav>
+        <hr>
+	</header>
+	<main class="container" style="padding:1rem;padding-top:0;">
+        {{block "content" .}}
+            {{if .ErrMsg}}
+                <center>
+    				<h3 class="pico-color-amber-200">
+	    				<b>error:</b> {{safeHTML .ErrMsg}}
+		    		</h3>
+                </center>
+            {{end}}
+        {{end}}
+	</main>
+    <footer class="container" style="padding-top:0">
+        <center>
+            &copy; 2024 Avalonbits •
+            <a href="mailto:icc@avalonbits.com">Email</a> •
+            <a href="https://twitter.com/avalonbits">Twitter</a>
+        </center>
+    </footer>
+</body>

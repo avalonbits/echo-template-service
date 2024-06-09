@@ -1,0 +1,9 @@
+version: 2
+sql:
+  - engine: "sqlite"
+    schema: "storage/datastore/migrations"
+    queries: "storage/datastore/queries.sql"
+    gen:
+      go:
+        package: "datastore"
+        out: "storage/datastore"
